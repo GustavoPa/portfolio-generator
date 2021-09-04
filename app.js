@@ -39,11 +39,10 @@ const promptUser = () => {
             type: 'input',
             name: 'about',
             message: 'Provide some information about yourself:',
-            validate: nameInput => {
-                if (nameInput) {
+            when: ({ confirmAbout }) => {
+                if (confirmAbout) {
                     return true;
                 } else {
-                    console.log('Please enter some info dude!');
                     return false;
                 }
             }
